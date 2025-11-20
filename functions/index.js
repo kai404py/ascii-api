@@ -47,17 +47,17 @@ function mergeNumAndDest(numLines, destLines) {
   const numW = numLines[0].length;
   const destW = destLines[0].length;
 
-  if (numW + destW > MAX_WIDTH) return ["ERROR: text too long"];
-
   const remainingSpace = MAX_WIDTH - numW;
-  const padLeft = Math.floor((remainingSpace - destW) / 2);
-  if (padLeft < 0) return ["ERROR: text too long"];
+  const padLeft = Math.max(0, Math.floor((remainingSpace - destW) / 2));
 
   const rows = [];
 
   for (let i = 0; i < height; i++) {
     const leftPad = "#".repeat(padLeft);
     let line = numLines[i] + leftPad + destLines[i];
+    if (line.length > MAX_WIDTH) {
+      line = line.substring(0, MAX_WIDTH);
+    }
     rows.push(line.padEnd(MAX_WIDTH, "#"));
   }
 
