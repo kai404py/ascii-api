@@ -1,6 +1,6 @@
 import font from "../font.json" assert { type: "json" };
 
-const MAX_WIDTH = 160;
+const MAX_WIDTH = 165;
 const glyphMap = font.glyphs || {};
 
 const fallbackGlyph = [
