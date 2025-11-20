@@ -166,8 +166,15 @@ function start(){
   if(params.test === "true"){
     const ascii = renderTest();
 
-    if(params.format === "json"){
-      document.body.innerText = JSON.stringify({ ascii: ascii });
+    if (params.format === "json") {
+        const json = JSON.stringify({ ascii: ascii }, null, 2);
+
+        // Replace ENTIRE HTML page with JSON output:
+        document.open();
+        document.write(json);
+        document.close();
+
+        return; // stop anything else running
     } else {
       document.getElementById("result").innerText = ascii;
     }
