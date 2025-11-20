@@ -2,7 +2,7 @@
   "name": "ascii-api",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo 'No build step required'",
+    "build": "mkdir -p dist && cp index.html dist/ && cp font.json dist/ && cp index.js dist/",
     "dev": "wrangler pages dev ./"
   },
   "devDependencies": {
