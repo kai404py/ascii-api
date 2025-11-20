@@ -2,6 +2,10 @@
   "name": "ascii-api",
   "version": "1.0.0",
   "scripts": {
-    "build": "echo 'No build step required'"
+    "build": "echo 'No build step required'",
+    "dev": "wrangler pages dev ./"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
   }
 }
