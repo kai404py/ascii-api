@@ -1,11 +1,7 @@
 {
-  "name": "ascii-blind-api",
+  "name": "ascii-api",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
-    "deploy": "wrangler deploy"
-  },
-  "devDependencies": {
-    "wrangler": "latest"
+    "build": "echo 'No build step required'"
   }
 }
